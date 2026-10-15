@@ -15,7 +15,7 @@ const getBase64 = () => {
 
 <template>
   <ContentWrap title="图片裁剪">
-    <BaseButton type="primary" class="mb-20px" @click="getBase64">裁剪</BaseButton>
+    <BaseButton type="primary" class="mb-20px" @click="getBase64">Crop</BaseButton>
     <ElInput v-model="base64" class="mb-20px" type="textarea" />
     <ImageCropping
       ref="cropperExpose"

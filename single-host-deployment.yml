@@ -1,5 +1,3 @@
-version: "3.5"
-
 networks:
   scopesentry-network:
     name: scopesentry-network
@@ -26,7 +24,7 @@ services:
       - scopesentry-network
 
   redis:
-    image: redis:7.0.11
+    image: redis:8.8.0
     container_name: scopesentry-redis
     restart: always
     ports:
@@ -43,7 +41,10 @@ services:
       - scopesentry-network
 
   scope-sentry:
-    image: autumn27/scopesentry:latest
+    image: scopesentry-local:latest
+    build:
+      context: .
+      dockerfile: dockerfile
     container_name: scope-sentry
     restart: always
     ports:
@@ -76,8 +77,10 @@ services:
       - scopesentry-network
 
   scopesentry-scan:
-    image: autumn27/scopesentry-scan:latest
-    network_mode: host
+    image: scopesentry-scan-local:latest
+    build:
+      context: ../ScopeSentry-Scan
+      dockerfile: dockerfile
     container_name: scopesentry-scan
     restart: always
     ulimits:
@@ -87,12 +90,12 @@ services:
     environment:
       NodeName: node-test
       TimeZoneName: Asia/Shanghai
-      MONGODB_IP: 127.0.0.1
+      MONGODB_IP: scopesentry-mongodb
       MONGODB_PORT: 27017
       MONGODB_DATABASE: ScopeSentry
       MONGODB_USER: ${MONGO_INITDB_ROOT_USERNAME}
       MONGODB_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-      REDIS_IP: 127.0.0.1
+      REDIS_IP: scopesentry-redis
       REDIS_PORT: 6379
       REDIS_PASSWORD: ${REDIS_PASSWORD}
     depends_on:
@@ -100,3 +103,5 @@ services:
         condition: service_healthy
       scope-sentry:
         condition: service_healthy
+    networks:
+      - scopesentry-network

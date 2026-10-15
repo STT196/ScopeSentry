@@ -20,14 +20,14 @@ export const useLocaleStore = defineStore('locales', {
   state: (): LocaleState => {
     return {
       currentLocale: {
-        lang: getStorage('lang') || 'zh-CN',
-        elLocale: elLocaleMap[getStorage('lang') || 'zh-CN']
+        lang: getStorage('lang') || 'en',
+        elLocale: elLocaleMap[getStorage('lang') || 'en']
       },
       // 多语言
       localeMap: [
         {
           lang: 'zh-CN',
-          name: '简体中文'
+          name: 'Chinese (Simplified)'
         },
         {
           lang: 'en',

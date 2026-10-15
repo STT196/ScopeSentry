@@ -123,7 +123,7 @@ const submitForm = async () => {
       <div ref="editorContainer" class="yaml-editor"></div>
     </div>
     <div class="action-bar">
-      <ElButton @click="props.closeDialog">{{ t('common.cancel') || '取消' }}</ElButton>
+      <ElButton @click="props.closeDialog">{{ t('common.cancel') }}</ElButton>
       <ElButton type="primary" @click="submitForm" :loading="saveLoading">{{
         t('task.save') || '保存'
       }}</ElButton>

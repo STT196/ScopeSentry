@@ -3,6 +3,7 @@ __pycache__/
 __pycache__
 config.yaml
 file/
+data/
 PLUGINKEY
 dist/
 .uploads/

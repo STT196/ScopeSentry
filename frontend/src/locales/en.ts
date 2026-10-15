@@ -109,7 +109,9 @@ export default {
     copy: 'Copy',
     copySuccess: 'Copy Success',
     copyFailed: 'Copy Failed',
-    success: 'Success'
+    success: 'Success',
+    importing: 'Importing',
+    confirm: 'Confirm'
   },
   export: {
     exportType: 'Export Type',
@@ -597,7 +599,11 @@ export default {
     amount: 'Asset Quantity',
     visualGeneratorTip: 'Tip: You can perform visual fingerprint generation at',
     visualGeneratorLink: 'https://plugin.scope-sentry.top/fingers',
-    visualGeneratorAction: 'to quickly generate fingerprints'
+    visualGeneratorAction: 'to quickly generate fingerprints',
+    confirmUpdate: 'Update {count} fingerprint records?',
+    noUpdateData: 'There is no data to update',
+    updateSuccess: 'Updated {count} fingerprint records successfully',
+    updateFailed: 'Update failed. Please try again later.'
   },
   plugin: {
     name: 'Name',
@@ -661,7 +667,10 @@ export default {
     tokenPlaceholder: 'Please enter plugin Token',
     tokenRequired: 'Please enter Token',
     scan: 'Scan',
-    server: 'Server'
+    server: 'Server',
+    unknown: 'Unknown plugin',
+    loadFailed: 'Failed to load plugin list',
+    dataLoadFailed: 'Failed to load plugin data'
   },
   workplace: {
     goodMorning: 'Good morning',

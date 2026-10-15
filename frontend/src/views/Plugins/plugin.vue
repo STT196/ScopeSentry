@@ -57,12 +57,12 @@ const loadRemotePlugins = async () => {
         let isSystem = false
         if (plugin.tags) {
           const tags = plugin.tags.split(',').map((tag: string) => tag.trim())
-          isSystem = tags.includes('内置')
+    isSystem = tags.includes('内置') || tags.includes('Built-in')
         }
 
         return {
           id: plugin.id,
-          name: plugin.name?.trim() || plugin.hash || `插件-${plugin.id}`,
+          name: plugin.name?.trim() || plugin.hash || `Plugin-${plugin.id}`,
           module: plugin.module || '',
           priceStatus: plugin.priceStatus,
           price: plugin.price,
@@ -82,7 +82,7 @@ const loadRemotePlugins = async () => {
     remotePluginList.value = remotePlugins
   } catch (error) {
     console.error('Error loading plugins:', error)
-    ElMessage.error('获取插件列表失败')
+    ElMessage.error(t('plugin.loadFailed'))
   } finally {
     marketLoading.value = false
   }
@@ -94,7 +94,7 @@ const handleInstallPlugin = async (plugin: RemotePluginData, token?: string) => 
     const action =
       plugin.isInstalled && plugin.needUpdate ? t('plugin.update') : t('plugin.install')
 
-    let pluginName = '未知插件'
+    let pluginName = t('plugin.unknown')
     if (plugin && plugin.name) {
       const trimmedName = String(plugin.name).trim()
       if (trimmedName) {
@@ -128,7 +128,7 @@ const handleInstallPlugin = async (plugin: RemotePluginData, token?: string) => 
 
       if (exportRes.status !== '200' || !exportRes.data) {
         loadingMessage.close()
-        ElMessage.error(exportRes.message || '获取插件数据失败')
+        ElMessage.error(exportRes.message || t('plugin.dataLoadFailed'))
         return
       }
 

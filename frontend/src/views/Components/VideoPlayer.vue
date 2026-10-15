@@ -19,6 +19,6 @@ const showVideo = () => {
     />
 
     <ElDivider />
-    <BaseButton type="primary" @click="showVideo">弹窗展示</BaseButton>
+    <BaseButton type="primary" @click="showVideo">Show in dialog</BaseButton>
   </ContentWrap>
 </template>

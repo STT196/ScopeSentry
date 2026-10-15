@@ -228,7 +228,7 @@ export const useAppStore = defineStore('app', {
     },
     setLayout(layout: LayoutType) {
       if (this.mobile && layout !== 'classic') {
-        ElMessage.warning('移动端模式下不支持切换其它布局')
+        ElMessage.warning('Other layouts are not supported on mobile devices')
         return
       }
       this.layout = layout

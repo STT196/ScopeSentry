@@ -109,7 +109,9 @@ export default {
     copy: '复制',
     copySuccess: '复制成功',
     copyFailed: '复制失败',
-    success: '成功'
+    success: '成功',
+    importing: '导入中',
+    confirm: '确定'
   },
   export: {
     exportType: '导出类型',
@@ -592,7 +594,11 @@ export default {
     amount: '资产数量',
     visualGeneratorTip: '提示：您可以在',
     visualGeneratorLink: 'https://plugin.scope-sentry.top/fingers',
-    visualGeneratorAction: '快速生成指纹'
+    visualGeneratorAction: '快速生成指纹',
+    confirmUpdate: '确定要更新 {count} 条指纹数据吗？',
+    noUpdateData: '没有需要更新的数据',
+    updateSuccess: '成功更新 {count} 条指纹数据',
+    updateFailed: '更新失败，请稍后重试'
   },
   plugin: {
     name: '插件名称',
@@ -658,7 +664,10 @@ export default {
     tokenPlaceholder: '请输入插件 Token',
     tokenRequired: '请输入 Token',
     scan: '扫描',
-    server: '服务端'
+    server: '服务端',
+    unknown: '未知插件',
+    loadFailed: '获取插件列表失败',
+    dataLoadFailed: '获取插件数据失败'
   },
   workplace: {
     goodMorning: '早安',
