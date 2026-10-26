@@ -31,25 +31,25 @@ func printProgressBar(step, total int, action string) {
 		step, total, action)
 }
 
-func ensureDefaultSystemConfig(ctx context.Context, db *mongo.Database) error {
+func ensureConfigDocument(ctx context.Context, db *mongo.Database, name string, value interface{}, docType string) error {
 	configCollection := db.Collection("config")
 
 	var result bson.M
-	err := configCollection.FindOne(ctx, bson.M{"name": "timezone"}).Decode(&result)
+	err := configCollection.FindOne(ctx, bson.M{"name": name}).Decode(&result)
 	if err == nil {
 		return nil
 	}
 	if err != mongo.ErrNoDocuments {
-		return fmt.Errorf("failed to get timezone config: %v", err)
+		return fmt.Errorf("failed to get config %q: %v", name, err)
 	}
 
 	_, err = configCollection.InsertOne(ctx, bson.M{
-		"name":  "timezone",
-		"value": "Asia/Shanghai",
-		"type":  "system",
+		"name":  name,
+		"value": value,
+		"type":  docType,
 	})
 	if err != nil {
-		return fmt.Errorf("failed to insert timezone config: %v", err)
+		return fmt.Errorf("failed to insert config %q: %v", name, err)
 	}
 	return nil
 }
@@ -112,26 +112,18 @@ func CreateDatabase() error {
 		configCollection := db.Collection("config")
 
 		// 插入系统配置
-		if err := ensureDefaultSystemConfig(context.Background(), db); err != nil {
+		if err := ensureConfigDocument(context.Background(), db, "timezone", "Asia/Shanghai", "system"); err != nil {
 			return err
 		}
-		configCollection.InsertOne(context.Background(), bson.M{
-			"name":  "ModulesConfig",
-			"value": constants.ModulesConfig,
-			"type":  "system",
-		})
-
-		configCollection.InsertOne(context.Background(), bson.M{
-			"name":  "SubfinderApiConfig",
-			"value": constants.SubfinderApiConfig,
-			"type":  "subfinder",
-		})
-
-		configCollection.InsertOne(context.Background(), bson.M{
-			"name":  "RadConfig",
-			"value": constants.RadConfig,
-			"type":  "rad",
-		})
+		if err := ensureConfigDocument(context.Background(), db, "ModulesConfig", constants.ModulesConfig, "system"); err != nil {
+			return err
+		}
+		if err := ensureConfigDocument(context.Background(), db, "SubfinderApiConfig", constants.SubfinderApiConfig, "subfinder"); err != nil {
+			return err
+		}
+		if err := ensureConfigDocument(context.Background(), db, "RadConfig", constants.RadConfig, "rad"); err != nil {
+			return err
+		}
 
 		// 插入指纹版本
 		configCollection.InsertOne(context.Background(), bson.M{
@@ -303,7 +295,16 @@ func CreateDatabase() error {
 		logger.Info("Project initialization successful")
 	} else {
 		// 数据库已存在，但可能没有初始化文档；确保默认配置存在
-		if err := ensureDefaultSystemConfig(context.Background(), db); err != nil {
+		if err := ensureConfigDocument(context.Background(), db, "timezone", "Asia/Shanghai", "system"); err != nil {
+			return err
+		}
+		if err := ensureConfigDocument(context.Background(), db, "ModulesConfig", constants.ModulesConfig, "system"); err != nil {
+			return err
+		}
+		if err := ensureConfigDocument(context.Background(), db, "SubfinderApiConfig", constants.SubfinderApiConfig, "subfinder"); err != nil {
+			return err
+		}
+		if err := ensureConfigDocument(context.Background(), db, "RadConfig", constants.RadConfig, "rad"); err != nil {
 			return err
 		}
 

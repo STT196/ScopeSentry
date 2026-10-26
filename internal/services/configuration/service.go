@@ -14,6 +14,7 @@ import (
 	"github.com/STT196/ScopeSentry/internal/logger"
 	assetCommon "github.com/STT196/ScopeSentry/internal/services/assets/common"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
 
 	"github.com/STT196/ScopeSentry/internal/models"
 	nservice "github.com/STT196/ScopeSentry/internal/services/node"
@@ -46,6 +47,9 @@ const (
 func (s *Service) GetSubfinderContent(ctx *gin.Context) (string, error) {
 	doc, err := s.repo.FindOne(ctx.Request.Context(), collConfig, bson.M{"name": "SubfinderApiConfig"}, bson.M{"_id": 0})
 	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return "", nil
+		}
 		return "", err
 	}
 	if v, ok := doc["value"].(string); ok {
@@ -68,6 +72,9 @@ func (s *Service) SaveSubfinderContent(ctx *gin.Context, content string) error {
 func (s *Service) GetRadContent(ctx *gin.Context) (string, error) {
 	doc, err := s.repo.FindOne(ctx.Request.Context(), collConfig, bson.M{"name": "RadConfig"}, bson.M{"_id": 0})
 	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return "", nil
+		}
 		return "", err
 	}
 	if v, ok := doc["value"].(string); ok {
