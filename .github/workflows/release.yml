@@ -7,14 +7,14 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "发布版本号（如 v1.9.2）"
+        description: "Release version (for example v1.9.2)"
         required: true
         type: string
 
 env:
   DOCKER_IMAGE: autumn27/scopesentry
-  GO_VERSION: "1.24"
-  NODE_VERSION: "20"
+  GO_VERSION: "1.25"
+  NODE_VERSION: "22"
 
 jobs:
   release:
@@ -70,7 +70,7 @@ jobs:
 
       - name: Overlay frontend into cmd/main/static
         run: |
-          # 将 dist-pro 产物覆盖合并到 static，保留 static 中 draco/lib/plugins 等其他模块
+          # Merge the dist-pro output into static while preserving other modules such as draco/lib/plugins in static
           rsync -a frontend/dist-pro/ cmd/main/static/
 
       - name: Setup Go
@@ -83,7 +83,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           version: "~> v2"
-          # CI 会将新构建的前端覆盖进 static，跳过 dirty 校验
+          # CI will overlay the freshly built frontend into static and skip dirty checks
           args: release --clean --skip=validate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
