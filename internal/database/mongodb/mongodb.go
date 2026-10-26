@@ -3,14 +3,12 @@ package mongodb
 import (
 	"context"
 	"fmt"
-	"go.mongodb.org/mongo-driver/bson"
-	"net/url"
-	"strconv"
 	"time"
 
 	"github.com/STT196/ScopeSentry/internal/logger"
 
 	"github.com/STT196/ScopeSentry/internal/config"
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -22,13 +20,8 @@ func init() {
 	// 设置连接超时
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	username := url.QueryEscape(config.GlobalConfig.MongoDB.Username)
-	password := url.QueryEscape(config.GlobalConfig.MongoDB.Password)
 
-	uri := config.GlobalConfig.MongoDB.IP + ":" + strconv.Itoa(config.GlobalConfig.MongoDB.Port)
-	if username != "" && password != "" {
-		uri = "mongodb://" + username + ":" + password + "@" + uri
-	}
+	uri := config.GetMongoURI()
 
 	// 设置客户端选项
 	clientOptions := options.Client().ApplyURI(uri)

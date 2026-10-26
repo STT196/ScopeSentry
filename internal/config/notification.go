@@ -9,12 +9,12 @@ package config
 
 import (
 	"encoding/json"
-	"fmt"
+	"strings"
+
 	"github.com/STT196/ScopeSentry/internal/global"
 	"github.com/STT196/ScopeSentry/internal/models"
 	"github.com/STT196/ScopeSentry/internal/utils"
 	"go.uber.org/zap"
-	"strings"
 )
 
 var NotificationApi []models.NotificationApi
@@ -31,13 +31,13 @@ func Notification(msg string) {
 		if api.Method == "GET" {
 			_, err := utils.Requests.HttpGet(uri)
 			if err != nil {
-				global.Log.Error(fmt.Sprintf(msg), zap.Error(err))
+				global.Log.Error(msg, zap.Error(err))
 			}
 		} else {
 			data := strings.Replace(api.Data, "*msg*", safeMsg, -1)
 			err, _ := utils.Requests.HttpPost(uri, []byte(data), api.ContentType)
 			if err != nil {
-				global.Log.Error(fmt.Sprintf(msg), zap.Error(err))
+				global.Log.Error(msg, zap.Error(err))
 			}
 		}
 	}

@@ -1,3 +1,6 @@
+//go:build ignore
+// +build ignore
+
 // examples----------------------------------
 // @file      : basic_usage.go
 // @author    : Autumn

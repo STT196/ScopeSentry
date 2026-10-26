@@ -2,8 +2,10 @@ package config
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"path/filepath"
+	"strconv"
 	"time"
 
 	"github.com/STT196/ScopeSentry/internal/utils"
@@ -44,6 +46,7 @@ type ServerConfig struct {
 
 // MongoDBConfig MongoDB配置
 type MongoDBConfig struct {
+	URI      string `mapstructure:"uri"`
 	IP       string `mapstructure:"ip"`
 	Port     int    `mapstructure:"port"`
 	Database string `mapstructure:"database"`
@@ -53,6 +56,7 @@ type MongoDBConfig struct {
 
 // RedisConfig Redis配置
 type RedisConfig struct {
+	URI      string `mapstructure:"uri"`
 	IP       string `mapstructure:"ip"`
 	Port     string `mapstructure:"port"`
 	Password string `mapstructure:"password"`
@@ -171,6 +175,7 @@ func setDefaults() {
 	viper.SetDefault("server.write_timeout", 60*time.Second)
 
 	// MongoDB配置
+	viper.SetDefault("mongodb.uri", "")
 	viper.SetDefault("mongodb.ip", "127.0.0.1")
 	viper.SetDefault("mongodb.port", 27017)
 	viper.SetDefault("mongodb.database", "ScopeSentry")
@@ -178,6 +183,7 @@ func setDefaults() {
 	viper.SetDefault("mongodb.password", "")
 
 	// Redis配置
+	viper.SetDefault("redis.uri", "")
 	viper.SetDefault("redis.ip", "127.0.0.1")
 	viper.SetDefault("redis.port", "6379")
 	viper.SetDefault("redis.password", "")
@@ -195,6 +201,9 @@ func loadFromEnv() {
 	}
 
 	// MongoDB 配置
+	if uri := os.Getenv("MONGODB_URI"); uri != "" {
+		viper.Set("mongodb.uri", uri)
+	}
 	if ip := os.Getenv("MONGODB_IP"); ip != "" {
 		viper.Set("mongodb.ip", ip)
 	}
@@ -212,6 +221,9 @@ func loadFromEnv() {
 	}
 
 	// Redis 配置
+	if uri := os.Getenv("REDIS_URL"); uri != "" {
+		viper.Set("redis.uri", uri)
+	}
 	if ip := os.Getenv("REDIS_IP"); ip != "" {
 		viper.Set("redis.ip", ip)
 	}
@@ -271,15 +283,28 @@ func handlePluginKey() error {
 
 // GetMongoURI 获取MongoDB连接URI
 func GetMongoURI() string {
-	uri := GlobalConfig.MongoDB.IP + ":" + string(GlobalConfig.MongoDB.Port)
-	if GlobalConfig.MongoDB.Username != "" && GlobalConfig.MongoDB.Password != "" {
-		uri = "mongodb://" + GlobalConfig.MongoDB.Username + ":" + GlobalConfig.MongoDB.Password + "@" + uri
+	if GlobalConfig.MongoDB.URI != "" {
+		return GlobalConfig.MongoDB.URI
+	}
+
+	host := GlobalConfig.MongoDB.IP
+	if host == "" {
+		host = "127.0.0.1"
+	}
+	uri := host + ":" + strconv.Itoa(GlobalConfig.MongoDB.Port)
+	if GlobalConfig.MongoDB.Username != "" || GlobalConfig.MongoDB.Password != "" {
+		username := url.QueryEscape(GlobalConfig.MongoDB.Username)
+		password := url.QueryEscape(GlobalConfig.MongoDB.Password)
+		uri = "mongodb://" + username + ":" + password + "@" + uri
 	}
 	return uri
 }
 
 // GetRedisAddr 获取Redis连接地址
 func GetRedisAddr() string {
+	if GlobalConfig.Redis.URI != "" {
+		return GlobalConfig.Redis.URI
+	}
 	return GlobalConfig.Redis.IP + ":" + GlobalConfig.Redis.Port
 }
 
