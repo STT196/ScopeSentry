@@ -31,6 +31,29 @@ func printProgressBar(step, total int, action string) {
 		step, total, action)
 }
 
+func ensureDefaultSystemConfig(ctx context.Context, db *mongo.Database) error {
+	configCollection := db.Collection("config")
+
+	var result bson.M
+	err := configCollection.FindOne(ctx, bson.M{"name": "timezone"}).Decode(&result)
+	if err == nil {
+		return nil
+	}
+	if err != mongo.ErrNoDocuments {
+		return fmt.Errorf("failed to get timezone config: %v", err)
+	}
+
+	_, err = configCollection.InsertOne(ctx, bson.M{
+		"name":  "timezone",
+		"value": "Asia/Shanghai",
+		"type":  "system",
+	})
+	if err != nil {
+		return fmt.Errorf("failed to insert timezone config: %v", err)
+	}
+	return nil
+}
+
 func CreateDatabase() error {
 	client := Client
 	if client == nil {
@@ -89,13 +112,8 @@ func CreateDatabase() error {
 		configCollection := db.Collection("config")
 
 		// 插入系统配置
-		_, err = configCollection.InsertOne(context.Background(), bson.M{
-			"name":  "timezone",
-			"value": "Asia/Shanghai",
-			"type":  "system",
-		})
-		if err != nil {
-			return fmt.Errorf("failed to insert timezone config: %v", err)
+		if err := ensureDefaultSystemConfig(context.Background(), db); err != nil {
+			return err
 		}
 		configCollection.InsertOne(context.Background(), bson.M{
 			"name":  "ModulesConfig",
@@ -284,12 +302,9 @@ func CreateDatabase() error {
 		fmt.Println() // 换行
 		logger.Info("Project initialization successful")
 	} else {
-		// 数据库已存在，检查并更新必要的配置
-		configCollection := db.Collection("config")
-		var result bson.M
-		err := configCollection.FindOne(context.Background(), bson.M{"name": "timezone"}).Decode(&result)
-		if err != nil {
-			return fmt.Errorf("failed to get timezone config: %v", err)
+		// 数据库已存在，但可能没有初始化文档；确保默认配置存在
+		if err := ensureDefaultSystemConfig(context.Background(), db); err != nil {
+			return err
 		}
 
 		// 检查定时任务
