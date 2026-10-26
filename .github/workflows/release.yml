@@ -12,7 +12,7 @@ on:
         type: string
 
 env:
-  DOCKER_IMAGE: autumn27/scopesentry
+  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE }}
   GO_VERSION: "1.25"
   NODE_VERSION: "22"
 
