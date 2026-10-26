@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/apikey"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/repositories/apikey"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	mongodriver "go.mongodb.org/mongo-driver/mongo"
 )
 

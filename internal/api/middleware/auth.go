@@ -1,11 +1,11 @@
 package middleware
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	"github.com/STT196/ScopeSentry/internal/logger"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/config"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"go.uber.org/zap"

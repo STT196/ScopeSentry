@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	"github.com/Autumn-27/ScopeSentry/internal/services/user"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	"github.com/STT196/ScopeSentry/internal/services/user"
 	"github.com/gin-gonic/gin"
 )
 

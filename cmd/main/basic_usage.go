@@ -18,9 +18,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/types"
+	"github.com/STT196/ScopeSentry/internal/utils/ct"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/models"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/types"
 )
 
 func main() {

@@ -8,7 +8,7 @@ package bootstrap
 
 import (
 	"context"
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

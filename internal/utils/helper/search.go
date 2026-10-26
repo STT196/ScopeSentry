@@ -9,12 +9,12 @@ package helper
 import (
 	"errors"
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/logger"
 	"regexp"
 	"strings"
 	"sync"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/models"
 )
 
 // SearchKey 定义了不同类型数据的字段映射关系

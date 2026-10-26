@@ -8,15 +8,15 @@
 package options
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
-	sasRedis "github.com/Autumn-27/ScopeSentry/internal/database/redis"
-	commonRepo "github.com/Autumn-27/ScopeSentry/internal/repositories/common"
-	assetCommon "github.com/Autumn-27/ScopeSentry/internal/services/assets/common"
-	"github.com/Autumn-27/ScopeSentry/internal/services/node"
-	"github.com/Autumn-27/ScopeSentry/internal/services/poc"
-	taskCommon "github.com/Autumn-27/ScopeSentry/internal/services/task/common"
-	"github.com/Autumn-27/ScopeSentry/internal/services/task/template"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
+	sasRedis "github.com/STT196/ScopeSentry/internal/database/redis"
+	commonRepo "github.com/STT196/ScopeSentry/internal/repositories/common"
+	assetCommon "github.com/STT196/ScopeSentry/internal/services/assets/common"
+	"github.com/STT196/ScopeSentry/internal/services/node"
+	"github.com/STT196/ScopeSentry/internal/services/poc"
+	taskCommon "github.com/STT196/ScopeSentry/internal/services/task/common"
+	"github.com/STT196/ScopeSentry/internal/services/task/template"
 	"github.com/redis/go-redis/v9"
 	"go.mongodb.org/mongo-driver/mongo"
 )

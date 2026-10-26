@@ -4,11 +4,11 @@ import (
 	"context"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/assets/url"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/repositories/assets/url"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

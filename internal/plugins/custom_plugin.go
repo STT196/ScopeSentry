@@ -9,13 +9,13 @@ package plugins
 
 import (
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/database/redis"
-	"github.com/Autumn-27/ScopeSentry/internal/interfaces"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/options"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/database/redis"
+	"github.com/STT196/ScopeSentry/internal/interfaces"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/options"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 )
 
 type Plugin struct {

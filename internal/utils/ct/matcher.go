@@ -16,8 +16,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/types"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/models"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/types"
 	"golang.org/x/net/publicsuffix"
 )
 

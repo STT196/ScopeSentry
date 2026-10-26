@@ -8,10 +8,10 @@
 package fingerprint
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	service "github.com/Autumn-27/ScopeSentry/internal/services/fingerprint"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	"github.com/STT196/ScopeSentry/internal/models"
+	service "github.com/STT196/ScopeSentry/internal/services/fingerprint"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/yaml.v3"
 )

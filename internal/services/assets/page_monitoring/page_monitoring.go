@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/assets/page_monitoring"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/repositories/assets/page_monitoring"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/models"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"

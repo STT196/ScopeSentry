@@ -3,10 +3,10 @@ package ip
 import (
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	iprepo "github.com/Autumn-27/ScopeSentry/internal/repositories/assets/ip"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/models"
+	iprepo "github.com/STT196/ScopeSentry/internal/repositories/assets/ip"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

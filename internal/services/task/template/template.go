@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/models"
 
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/task/template"
+	"github.com/STT196/ScopeSentry/internal/repositories/task/template"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

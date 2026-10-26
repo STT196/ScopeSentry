@@ -13,11 +13,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/logger"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/node"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/repositories/node"
 	"go.uber.org/zap"
 )
 

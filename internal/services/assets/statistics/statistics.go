@@ -1,10 +1,10 @@
 package statistics
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/assets/common"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/assets/statistics"
-	"github.com/Autumn-27/ScopeSentry/internal/services/assets/asset"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/repositories/assets/common"
+	"github.com/STT196/ScopeSentry/internal/repositories/assets/statistics"
+	"github.com/STT196/ScopeSentry/internal/services/assets/asset"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"sync"

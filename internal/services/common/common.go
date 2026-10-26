@@ -8,7 +8,7 @@
 package common
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/common"
+	"github.com/STT196/ScopeSentry/internal/repositories/common"
 )
 
 type Service struct {

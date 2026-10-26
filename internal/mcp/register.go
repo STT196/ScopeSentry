@@ -3,7 +3,7 @@ package mcp
 import (
 	"net/http"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/middleware"
+	"github.com/STT196/ScopeSentry/internal/api/middleware"
 	"github.com/gin-gonic/gin"
 	mcpSDK "github.com/modelcontextprotocol/go-sdk/mcp"
 )

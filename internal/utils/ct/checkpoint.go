@@ -16,8 +16,8 @@ import (
 	"sync"
 	"time"
 
-	sasRedis "github.com/Autumn-27/ScopeSentry/internal/database/redis"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
+	sasRedis "github.com/STT196/ScopeSentry/internal/database/redis"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/models"
 	"github.com/redis/go-redis/v9"
 )
 

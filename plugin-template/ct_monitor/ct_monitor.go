@@ -14,16 +14,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/models"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct"
-	ct_models "github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
+	"github.com/STT196/ScopeSentry/internal/utils/ct"
+	ct_models "github.com/STT196/ScopeSentry/internal/utils/ct/models"
 
-	"github.com/Autumn-27/ScopeSentry/internal/options"
-	"github.com/Autumn-27/ScopeSentry/internal/utils"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/types"
+	"github.com/STT196/ScopeSentry/internal/options"
+	"github.com/STT196/ScopeSentry/internal/utils"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/types"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

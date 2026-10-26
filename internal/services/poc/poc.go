@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/services/node"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/services/node"
 	"go.uber.org/zap"
 	"gopkg.in/yaml.v3"
 
@@ -15,10 +15,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/repositories/poc"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/repositories/poc"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

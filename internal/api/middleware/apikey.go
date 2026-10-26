@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/services/apikey"
+	"github.com/STT196/ScopeSentry/internal/services/apikey"
 	"github.com/gin-gonic/gin"
 )
 

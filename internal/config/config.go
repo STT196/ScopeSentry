@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils"
+	"github.com/STT196/ScopeSentry/internal/utils"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	"github.com/spf13/viper"
 )
 

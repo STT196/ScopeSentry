@@ -9,12 +9,12 @@ package jobs
 
 import (
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/options"
-	"github.com/Autumn-27/ScopeSentry/internal/plugins"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/options"
+	"github.com/STT196/ScopeSentry/internal/plugins"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

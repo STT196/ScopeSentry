@@ -7,15 +7,15 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/helper"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/utils/helper"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/random"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/utils/random"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

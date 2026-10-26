@@ -10,8 +10,8 @@ package sensitiveRule
 import (
 	"sync"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	svc "github.com/Autumn-27/ScopeSentry/internal/services/sensitive_rule"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	svc "github.com/STT196/ScopeSentry/internal/services/sensitive_rule"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,10 +3,10 @@ package dictionary
 import (
 	"fmt"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	dictservice "github.com/Autumn-27/ScopeSentry/internal/services/dictionary"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/models"
+	dictservice "github.com/STT196/ScopeSentry/internal/services/dictionary"
 	"github.com/gin-gonic/gin"
 )
 

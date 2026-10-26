@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/models"
 )
 
 // SDKOptions SDK配置选项

@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 	"github.com/gin-gonic/gin"
 )
 

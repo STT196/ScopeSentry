@@ -1,9 +1,9 @@
 package crawler
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/api/response"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/services/assets/crawler"
+	"github.com/STT196/ScopeSentry/internal/api/response"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/services/assets/crawler"
 	"github.com/gin-gonic/gin"
 )
 

@@ -8,7 +8,7 @@
 package helper
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/config"
 	"time"
 )
 

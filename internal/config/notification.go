@@ -10,9 +10,9 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/global"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/utils"
+	"github.com/STT196/ScopeSentry/internal/global"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/utils"
 	"go.uber.org/zap"
 	"strings"
 )

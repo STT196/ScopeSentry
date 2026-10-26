@@ -27,18 +27,18 @@ import (
 	"io/fs"
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/worker"
+	"github.com/STT196/ScopeSentry/internal/worker"
 
-	"github.com/Autumn-27/ScopeSentry/internal/bootstrap"
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/scheduler"
-	"github.com/Autumn-27/ScopeSentry/internal/update"
+	"github.com/STT196/ScopeSentry/internal/bootstrap"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/scheduler"
+	"github.com/STT196/ScopeSentry/internal/update"
 
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/logger"
 
-	_ "github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
+	_ "github.com/STT196/ScopeSentry/internal/database/mongodb"
 
-	_ "github.com/Autumn-27/ScopeSentry/internal/database/redis"
+	_ "github.com/STT196/ScopeSentry/internal/database/redis"
 
 	"net/http"
 	"os"
@@ -46,15 +46,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 
-	_ "github.com/Autumn-27/ScopeSentry/internal/bootstrap"
+	_ "github.com/STT196/ScopeSentry/internal/bootstrap"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes"
-	scopesentrymcp "github.com/Autumn-27/ScopeSentry/internal/mcp"
-	redisLogSubscriber "github.com/Autumn-27/ScopeSentry/internal/services/redis_log_subscriber"
+	"github.com/STT196/ScopeSentry/internal/api/routes"
+	scopesentrymcp "github.com/STT196/ScopeSentry/internal/mcp"
+	redisLogSubscriber "github.com/STT196/ScopeSentry/internal/services/redis_log_subscriber"
 
-	"github.com/Autumn-27/ScopeSentry/docs"
+	"github.com/STT196/ScopeSentry/docs"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

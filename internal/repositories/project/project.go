@@ -3,13 +3,13 @@ package project
 import (
 	"context"
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 	"strings"
 	"unicode"
 
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

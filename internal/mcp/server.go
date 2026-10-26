@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

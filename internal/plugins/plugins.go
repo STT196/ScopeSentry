@@ -8,12 +8,12 @@
 package plugins
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
-	"github.com/Autumn-27/ScopeSentry/internal/interfaces"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
-	"github.com/Autumn-27/ScopeSentry/internal/options"
-	"github.com/Autumn-27/ScopeSentry/internal/symbols"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/interfaces"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/models"
+	"github.com/STT196/ScopeSentry/internal/options"
+	"github.com/STT196/ScopeSentry/internal/symbols"
 	"github.com/traefik/yaegi/interp"
 	"github.com/traefik/yaegi/stdlib"
 	"go.mongodb.org/mongo-driver/bson"

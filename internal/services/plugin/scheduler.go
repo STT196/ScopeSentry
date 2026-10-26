@@ -10,7 +10,7 @@ package plugin
 import (
 	"fmt"
 
-	schedulerCore "github.com/Autumn-27/ScopeSentry/internal/scheduler"
+	schedulerCore "github.com/STT196/ScopeSentry/internal/scheduler"
 )
 
 func AddJob(hash string, schedule string) error {

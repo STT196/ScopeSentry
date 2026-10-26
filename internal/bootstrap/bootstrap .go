@@ -3,8 +3,8 @@ package bootstrap
 import (
 	"context"
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/config"
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/config"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
 	"go.mongodb.org/mongo-driver/bson"
 	"log"
 	"time"

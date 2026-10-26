@@ -8,8 +8,8 @@
 package plugin
 
 import (
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
-	"github.com/Autumn-27/ScopeSentry/internal/plugins"
+	"github.com/STT196/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/plugins"
 	"go.uber.org/zap"
 )
 

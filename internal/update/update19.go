@@ -10,10 +10,10 @@ package update
 import (
 	"context"
 	"fmt"
-	"github.com/Autumn-27/ScopeSentry/internal/constants"
+	"github.com/STT196/ScopeSentry/internal/constants"
 
-	"github.com/Autumn-27/ScopeSentry/internal/database/mongodb"
-	"github.com/Autumn-27/ScopeSentry/internal/logger"
+	"github.com/STT196/ScopeSentry/internal/database/mongodb"
+	"github.com/STT196/ScopeSentry/internal/logger"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

@@ -1,9 +1,9 @@
 package assets
 
 import (
-	iphandler "github.com/Autumn-27/ScopeSentry/internal/api/handlers/assets/ip"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/common"
-	"github.com/Autumn-27/ScopeSentry/internal/models"
+	iphandler "github.com/STT196/ScopeSentry/internal/api/handlers/assets/ip"
+	"github.com/STT196/ScopeSentry/internal/api/routes/common"
+	"github.com/STT196/ScopeSentry/internal/models"
 )
 
 func registerIPRoutes() models.RouteGroup {

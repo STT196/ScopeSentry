@@ -3,23 +3,23 @@ package routes
 import (
 	"strings"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/middleware"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/assets"
-	confRoutes "github.com/Autumn-27/ScopeSentry/internal/api/routes/configuration"
-	dictRoutes "github.com/Autumn-27/ScopeSentry/internal/api/routes/dictionary"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/export"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/fingerprint"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/plugin"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/poc"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/project"
-	sroutes "github.com/Autumn-27/ScopeSentry/internal/api/routes/sensitive_rule"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/system"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/task"
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/user"
+	"github.com/STT196/ScopeSentry/internal/api/middleware"
+	"github.com/STT196/ScopeSentry/internal/api/routes/assets"
+	confRoutes "github.com/STT196/ScopeSentry/internal/api/routes/configuration"
+	dictRoutes "github.com/STT196/ScopeSentry/internal/api/routes/dictionary"
+	"github.com/STT196/ScopeSentry/internal/api/routes/export"
+	"github.com/STT196/ScopeSentry/internal/api/routes/fingerprint"
+	"github.com/STT196/ScopeSentry/internal/api/routes/plugin"
+	"github.com/STT196/ScopeSentry/internal/api/routes/poc"
+	"github.com/STT196/ScopeSentry/internal/api/routes/project"
+	sroutes "github.com/STT196/ScopeSentry/internal/api/routes/sensitive_rule"
+	"github.com/STT196/ScopeSentry/internal/api/routes/system"
+	"github.com/STT196/ScopeSentry/internal/api/routes/task"
+	"github.com/STT196/ScopeSentry/internal/api/routes/user"
 	"github.com/gin-gonic/gin"
 
-	"github.com/Autumn-27/ScopeSentry/internal/api/routes/node"
-	apikeyRoutes "github.com/Autumn-27/ScopeSentry/internal/api/routes/apikey"
+	"github.com/STT196/ScopeSentry/internal/api/routes/node"
+	apikeyRoutes "github.com/STT196/ScopeSentry/internal/api/routes/apikey"
 )
 
 // loggerWithSkipPaths 自定义日志中间件，支持跳过指定前缀的路径

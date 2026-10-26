@@ -17,9 +17,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Autumn-27/ScopeSentry/internal/global"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/models"
-	"github.com/Autumn-27/ScopeSentry/internal/utils/ct/types"
+	"github.com/STT196/ScopeSentry/internal/global"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/models"
+	"github.com/STT196/ScopeSentry/internal/utils/ct/types"
 
 	ct "github.com/google/certificate-transparency-go"
 	"github.com/google/certificate-transparency-go/client"
