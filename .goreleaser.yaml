@@ -20,7 +20,7 @@ builds:
     binary: ScopeSentry
     ldflags:
       - -s -w
-      - -X github.com/Autumn-27/ScopeSentry/internal/constants.Version={{.Version}}
+      - -X github.com/STT196/ScopeSentry/internal/constants.Version={{.Version}}
 
 archives:
   - id: default
@@ -34,7 +34,7 @@ changelog:
 
 release:
   github:
-    owner: Autumn-27
+    owner: STT196
     name: ScopeSentry
   name_template: "ScopeSentry {{.Version}}"
 

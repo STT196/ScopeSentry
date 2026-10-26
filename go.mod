@@ -1,4 +1,4 @@
-module github.com/Autumn-27/ScopeSentry
+module github.com/STT196/ScopeSentry
 
 go 1.24.0
 
