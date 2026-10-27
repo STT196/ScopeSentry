@@ -27,6 +27,8 @@ type ScanTemplate struct {
 	Name                string     `bson:"name" json:"name"`
 	VulList             []string   `bson:"vullist" json:"vullist"`
 	PassiveScan         []string   `bson:"PassiveScan" json:"PassiveScan"`
+	// Proxy is passed through to the scan node for this task's HTTP-layer egress.
+	Proxy string `bson:"proxy" json:"proxy"`
 }
 
 type Parameters struct {

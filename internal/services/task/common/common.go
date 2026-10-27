@@ -255,6 +255,7 @@ func (s *service) GetScanTemplate(ctx context.Context, task *models.Task) (*mode
 	scanTemplate.Duplicates = task.Duplicates
 	scanTemplate.IsStart = task.IsStart
 	scanTemplate.TaskName = task.Name
+	scanTemplate.Proxy = task.Proxy
 	return scanTemplate, err
 }
 

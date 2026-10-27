@@ -40,6 +40,9 @@ type Task struct {
 	TargetTp       string                   `bson:"targetTp" json:"targetTp"`
 	TargetSource   string                   `bson:"targetSource" json:"targetSource"`
 	BindProject    string                   `bson:"bindProject" json:"bindProject"`
+	// Proxy is an optional per-task egress proxy (http/https/socks5) supplied by
+	// the orchestrator so the scan node routes HTTP-layer traffic through it.
+	Proxy string `bson:"proxy" json:"proxy"`
 	Type           string                   `bson:"type" json:"type"`
 	IsStart        bool                     `bson:"isStart" json:"isStart"`
 	LastTime       string                   `bson:"lastTime"  json:"lastTime"`

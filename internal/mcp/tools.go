@@ -464,6 +464,7 @@ type createScanTaskInput struct {
 	TargetNumber   int                 `json:"targetNumber,omitempty" jsonschema:"search 模式下目标数量上限，0 表示不限制"`
 	TargetIds      []string            `json:"targetIds,omitempty" jsonschema:"select 模式下选中的资产 ObjectID 列表"`
 	BindProject    string              `json:"bindProject,omitempty" jsonschema:"绑定项目 ObjectID，扫描结果归属"`
+	Proxy          string              `json:"proxy,omitempty" jsonschema:"可选，该任务的出站代理(http/https/socks5)，扫描节点将 HTTP 层流量经此代理发出。由编排器(如 ARTEX Nightshift)传入"`
 	ScheduledTasks bool                `json:"scheduledTasks,omitempty" jsonschema:"是否创建为计划任务"`
 	Hour           int                 `json:"hour,omitempty" jsonschema:"计划任务间隔-小时"`
 	Minute         int                 `json:"minute,omitempty" jsonschema:"计划任务间隔-分钟"`
@@ -505,6 +506,7 @@ func createScanTask(ctx context.Context, _ *mcp.CallToolRequest, input createSca
 		TargetNumber:   input.TargetNumber,
 		TargetIds:      input.TargetIds,
 		BindProject:    input.BindProject,
+		Proxy:          input.Proxy,
 		ScheduledTasks: input.ScheduledTasks,
 		Hour:           input.Hour,
 		Minute:         input.Minute,
